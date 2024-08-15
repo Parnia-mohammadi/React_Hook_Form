@@ -6,6 +6,5 @@
   body {
     @apply bg-green-100;
     @apply h-full;
-    @apply flex-col justify-center items-center;
   }
 }
