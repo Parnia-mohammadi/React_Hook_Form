@@ -2,7 +2,7 @@ function Form() {
   return (
     <div
       className="w-1/2 border-black border-solid border-1 rounded-lg
-     bg-white flex-col justify-center items-center"
+     bg-white flex-col justify-center items-center p-[3%]"
     >
       <h1 className="text-xl font-bold">Contact Us </h1>
       <form id="form" className="flex flex-col justify-center items-center">
@@ -56,7 +56,7 @@ function Form() {
           required
           type="submit"
           value="Submit"
-          className="bg-emerald-700 text-white w-full"
+          className="bg-emerald-700 text-white w-full rounded-lg"
         />
       </form>
     </div>

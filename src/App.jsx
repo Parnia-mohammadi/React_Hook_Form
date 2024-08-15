@@ -3,7 +3,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="bg-green-300">
+    <div className="h-screen flex flex-col items-center justify-center">
       <Form />
     </div>
   );
