@@ -13,8 +13,7 @@ export const schema = yup.object().shape({
     .string()
     .email("format of email is incorrect")
     .required("You should enter your email"),
-  general: yup.boolean().nullable(),
-  support: yup.boolean().nullable(),
+  query: yup.boolean().nullable(),
   message: yup
     .string()
     .required("You should enter your message")

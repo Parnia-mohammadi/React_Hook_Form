@@ -12,8 +12,7 @@ export const zodSchema = z.object({
     .string()
     .email("format of email is incorrect")
     .nonempty("You should enter your email"),
-  general: z.boolean().optional(),
-  support: z.boolean().optional(),
+  query: z.boolean().optional(),
   message: z
     .string()
     .nonempty("You should enter your message")

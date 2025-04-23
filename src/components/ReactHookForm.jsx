@@ -102,7 +102,7 @@ function ReactHookForm() {
               name="query"
               id="general"
               value="General Enquery"
-              {...register("general")}
+              {...register("query")}
             />
             <label htmlFor="general"> General Enquery</label>
             {errors.general && (
@@ -114,7 +114,7 @@ function ReactHookForm() {
               type="radio"
               name="query"
               id="support"
-              {...register("support")}
+              {...register("query")}
             />
             <label htmlFor="support"> Support Request</label>
             {errors.support && (
