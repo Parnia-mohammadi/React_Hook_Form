@@ -1,14 +1,19 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { schema } from "./Schema";
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { zodSchema } from "./ZodSchema";
 
 function ReactHookForm() {
+  const [validator, setValidator] = useState("yup");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver:
+      validator === "yup" ? yupResolver(schema) : zodResolver(zodSchema),
     defaultValues: {
       name: "",
       lastName: "",
@@ -28,7 +33,17 @@ function ReactHookForm() {
       className="w-1/2 border-black border-solid border-1 rounded-lg
            bg-white flex-col justify-center items-center p-[3%] gap-y-4"
     >
-      <h1 className="text-xl font-bold my-4">Contact Us </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-xl font-bold my-4">Contact Us </h1>
+        <div>
+          <button
+            onClick={() => setValidator(validator === "yup" ? "zod" : "yup")}
+          >
+            change validator
+          </button>
+          <p className="text-sm text-center">{`Validator: ${validator}`}</p>
+        </div>
+      </div>
       <form
         id="form"
         className="flex flex-wrap gap-x-2 gap-y-2 "
