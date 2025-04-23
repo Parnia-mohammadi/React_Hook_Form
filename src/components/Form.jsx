@@ -1,11 +1,19 @@
 function Form() {
+  const handleSubmit = (e) => {
+    e.preventDefaultValue();
+    console.log(e);
+  };
   return (
     <div
       className="w-1/2 border-black border-solid border-1 rounded-lg
      bg-white flex-col justify-center items-center p-[3%] gap-y-4"
     >
       <h1 className="text-xl font-bold my-4">Contact Us </h1>
-      <form id="form" className="flex flex-wrap gap-x-2 gap-y-2 ">
+      <form
+        id="form"
+        className="flex flex-wrap gap-x-2 gap-y-2 "
+        onSubmit={(e) => handleSubmit(e)}
+      >
         {/* FirstName */}
         <div className="flex-1 w-full">
           <label htmlFor="name">First Name *</label>
@@ -14,7 +22,7 @@ function Form() {
             required
             type="text"
             id="name"
-            className="w-full border-gray-400 border-[1px] border-solid rounded-md"
+            className="px-3 w-full border-gray-400 border-[1px] border-solid rounded-md"
           />
         </div>
         {/* LastName */}
@@ -25,7 +33,7 @@ function Form() {
             required
             type="text"
             id="lastName"
-            className="w-full border-gray-400 border-[1px] border-solid rounded-md"
+            className="px-3 w-full border-gray-400 border-[1px] border-solid rounded-md"
           />
         </div>
         {/* email */}
@@ -36,7 +44,7 @@ function Form() {
             type="email"
             name="Email"
             id="email"
-            className="w-full border-gray-400 border-[1px] border-solid rounded-md"
+            className="px-3 w-full border-gray-400 border-[1px] border-solid rounded-md"
           />
         </div>
         {/* query */}
@@ -50,11 +58,11 @@ function Form() {
               id="general"
               value="General Enquery"
             />
-            <label htmlFor="general">General Enquery</label>
+            <label htmlFor="general"> General Enquery</label>
           </div>
           <div className="w-1/2 border-[1px] border-gray-400 border-solid rounded-md p-4">
             <input required type="radio" name="query" id="support" />
-            <label htmlFor="support">Support Request</label>
+            <label htmlFor="support"> Support Request</label>
           </div>
         </div>
         {/* Message */}
@@ -66,7 +74,7 @@ function Form() {
             type="text"
             name="message"
             id="message"
-            className="border-gray-400 border-[1px] border-solid rounded-md h-full w-full"
+            className="px-3 border-gray-400 border-[1px] border-solid rounded-md h-full w-full"
           />
         </div>
         {/* checkbox */}
