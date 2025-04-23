@@ -18,6 +18,7 @@ function App() {
       ) : formName != "" ? (
         <ReactHookForm />
       ) : null}
+      {formName && <p className="mt-2">{`You choose ${formName}`}</p>}
     </div>
   );
 }
